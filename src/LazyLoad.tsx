@@ -1,7 +1,10 @@
 import * as React from "react";
 import load이미지 from "./image/noImage.jpg"
 
-function LazyLoad () {
+interface ILazyLoad {
+    src: string;
+}
+function LazyLoad ({src}: ILazyLoad) {
 
 const [loading, setLoading] = React.useState(false)
 const imgRef = React.useRef(null)
@@ -22,11 +25,15 @@ const intersectionObserver = (entries: IntersectionObserverEntry[], end: Interse
     })
 }
 
+function getPosterImg(poster_path: string, size?: string ) {
+    return `https://image.tmdb.org/t/p/${size?size:"original"}${poster_path}`
+}
+
     return(
         <img 
         ref={imgRef} 
-        src={loading ? "https://t1.daumcdn.net/cfile/tistory/996333405A8280FC23" : load이미지}
-        style={{width:'40vw', height:'50vh'}}
+        src={loading ? getPosterImg(src) : load이미지}
+        style={{width:'80vw', height:'50vh'}}
         />
     )
 }
