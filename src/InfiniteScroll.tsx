@@ -12,6 +12,8 @@ function InfiniteScroll(){  // 무한스크롤 & lazyLoad
 const [ref, inView] = useInView()
 
 const [items, setItems] = React.useState<Iresults[]>([])
+// console.log('items: ', items);
+
 const [page, setPage] = React.useState(1)
 console.log('page: ', page);
 const [loading, setLoading] = React.useState(false)

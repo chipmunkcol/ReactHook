@@ -28,11 +28,13 @@ const intersectionObserver = (entries: IntersectionObserverEntry[], end: Interse
 function getPosterImg(poster_path: string, size?: string ) {
     return `https://image.tmdb.org/t/p/${size?size:"original"}${poster_path}`
 }
+console.log(getPosterImg(src))
 
     return(
         <img 
         ref={imgRef} 
         src={loading ? getPosterImg(src) : load이미지}
+        alt="디테일페이지 고화질 이미지입니다~"
         style={{width:'80vw', height:'50vh'}}
         />
     )
