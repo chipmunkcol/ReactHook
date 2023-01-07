@@ -4,6 +4,7 @@ import LazyLoad from './LazyLoad';
 import UseCallback from './UseCallback';
 import UseMemo from './UseMemo';
 import ProgressiveImage from 'react-progressive-graceful-image';
+import Form from './Form';
 
 const image ="https://image.tmdb.org/t/p/original/wMNY6tU9WOUeAMRfqbCYwceOl9u.jpg"
 const placeholderSrc = 'https://image.tmdb.org/t/p/w200/wMNY6tU9WOUeAMRfqbCYwceOl9u.jpg'
@@ -11,7 +12,7 @@ const placeholderSrc = 'https://image.tmdb.org/t/p/w200/wMNY6tU9WOUeAMRfqbCYwceO
 function App() {
 
   return (
-    <>
+    <div style={{width:'100vw', height:'100vh', margin:'0 auto', display:'flex', justifyContent:'center', alignItems:'center'}}>
 
       {/* <UseMemo /> */}
 
@@ -21,10 +22,9 @@ function App() {
 
       {/* <InfiniteScroll />  */}
 
-      <ProgressiveImage src={image} placeholder={placeholderSrc}>
+      {/* <ProgressiveImage src={image} placeholder={placeholderSrc}>
       {(src, loading) => (
         <img 
-          className={`image${loading ? " loading" : " loaded"}`}
           src={src}
           alt="progressiveImage"
           width="700"
@@ -32,9 +32,11 @@ function App() {
         />
       )}
 
-      </ProgressiveImage>
+      </ProgressiveImage> */}
 
-    </>
+      <Form />
+
+    </div>
   );
 }
 
